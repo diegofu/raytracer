@@ -1,0 +1,22 @@
+# lab4_sample1 - Three colored spheres with no shading
+
+material 0.0 0.8 0.0    1.0 0.0 0.0 1  0.0 1.0
+sphere 0.5 3.0 -1.5  1.0
+
+material 0.0 0.0 0.8    1.0 0.0 0.0 1  0.0 1.0
+sphere 3.0 3.0 -1.5  1.0
+
+material 0.8 0.0 0.0    1.0 0.0 0.0 1  0.0 1.0
+sphere 2.0 3.0 0.5  1.0
+
+camera_from -9.0 6.0 13.0
+camera_target 0.0 2.5 1.0
+camera_up    0.0 1.0 0.0
+camera_angle 45.0
+camera_resolution 300 200
+
+background 0.0 0.0 0.0
+ambient_light 1.0 1.0 1.0
+
+trace_depth 6
+render sample1.ppm

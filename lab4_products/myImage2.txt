@@ -1,0 +1,51 @@
+# Four spheres, a bumpMapped box, a cone ,and wall in blueish color
+# and wall in pink color
+# area lights have 16 samples
+
+material 1.0 0.2 0.0    0.0 0.7 0.3 1  0.0 1.0
+sphere -4.5 3.0 -1.5  2.0
+
+material 0.2 0.0 0.8    0.0 0.8 0.2 1  0.0 1.0
+sphere 3.0 3.0 -1.5  1.0
+
+material 0.8 0.8 0.8    0.0 0.7 0.3 1  0.0 1.0
+sphere -3.0 3.0 0.5  1.5
+
+material 0.0 0.8 0.8    0.0 0.7 0.3 1  0.0 1.0
+sphere 4.0 2.0 4.5  1.5
+
+material 0.4 0.8 1.0    0.0 1.0 0.0 1  0.0 1.0
+mesh objects/walls.obj
+
+material 0.8 0 0.6    0.0 1.0 0.0 1  0.0 1.0
+mesh objects/plane.obj
+
+material 0.8 0 0.6    0.0 1.0 0.0 1  0.0 1.0
+bumpMap textures/MarbleBeige.ppm textures/MarbleBeige-Normals.ppm
+mesh objects/picture.obj
+
+material 0.8 0 0.6    0.0 0.8 0.1 1  0.0 1.0
+mesh objects/cone.obj
+
+material 1.0 1.0 1.0    0.0 1.0 0.0 1  0.0 1.0
+bumpMap textures/CobbledWall.ppm textures/CobbledWall-Normals.ppm
+mesh objects/box.obj
+
+camera_from   -0.0 17.0 15.0
+camera_target  0.0 2.0  0.0
+camera_up      0.0 1.0  0.0
+camera_angle 50.0
+camera_resolution 600 400
+
+# no super sampling
+#jitter 4 4
+
+background 0.0 0.0 0.0
+
+# change all light types to point_light
+point_light 6 6 6 6.0 4.0 4.0 1.0
+point_light 12 12 12 0.0 3.0 -1.0 0.5
+point_light 12 12 12 -5 5.0 4.0 2.0
+
+trace_depth 6
+render lab4_products/myImage2.ppm

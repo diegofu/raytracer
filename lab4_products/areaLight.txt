@@ -1,0 +1,36 @@
+# areaLight.txt
+# Three spheres a textures box and wall and a mirror
+# within area lights and soft shadow with 16 sampling per light
+
+material 0.0 0.8 0.0    0.0 0.2 0.9 1  0.0 1.0
+sphere 0.5 3.0 -1.5  1.0
+
+material 0.0 0.0 0.8    0.0 0.2 0.9 1  0.0 1.0
+sphere 3.0 3.0 -1.5  1.0
+
+material 0.8 0.0 0.0    0.0 0.2 0.9 1  0.0 1.0
+sphere 2.0 3.0 0.5  1.0
+
+material 1.0 1.0 1.0    0.0 1.0 0.0 1  0.0 1.0
+texture textures/mramor6x6.ppm
+mesh objects/walls.obj
+
+material 1.0 1.0 1.0    0.0 0.2 0.9 1  0.0 1.0
+mesh objects/plane.obj
+
+material 1.0 1.0 1.0    0.0 1.0 0.0 1  0.0 1.0
+texture textures/bark.ppm
+mesh objects/box.obj
+
+camera_from   -9.0 6.0 12.0
+camera_target  0.0 2.0  0.0
+camera_up      0.0 1.0  0.0
+camera_angle 45.0
+camera_resolution 600 400
+
+background 0.0 0.0 0.0
+area_light 10000.0 10000.0 10000.0 -30.0 30.0 100.0 10.0
+#point_light 10000.0 10000.0 10000.0 -30.0 30.0 100.0
+
+trace_depth 6
+render lab4_products/areaLight.ppm
